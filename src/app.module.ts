@@ -5,7 +5,7 @@ import { CatsController } from './cats/cats.controller';
 import { HostController } from './host/host.controller';
 import { LoggerMiddleware } from './middleware/LoggerMiddleware';
 import { UserModule } from './user/user.module';
-import { ExceptController } from './except/except.controller';
+import { ExceptController } from './exception/except.controller';
 
 @Module({
   imports: [UserModule],
