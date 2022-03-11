@@ -6,6 +6,7 @@ import { Request, Response } from 'express';
 // 콘트롤러에서 HttpExceptionFilter 를 사용하고자 하는 컨트롤러의 Route 에서 UseFilters 라는 데코레이터를 이용하여 사용할 수 있다.
 
 // catch 데코레이터를 사용하여 HttpException 관련 에러를 catch 하겠다는 선언
+// 만약 HttpException을 빼면 전체에 대한 Exception Handler 로써 catch 된다
 @Catch(HttpException)
 
 // ExceptionFilter 인터페이스 implements
