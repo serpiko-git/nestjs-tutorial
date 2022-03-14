@@ -1,4 +1,4 @@
-import { ExceptionFilter, Catch, ArgumentsHost, HttpException, Injectable } from '@nestjs/common';
+import { ExceptionFilter, Catch, ArgumentsHost, HttpException } from '@nestjs/common';
 import { Request, Response } from 'express';
 
 // src/exception/except.controller.ts 에서는 HttpException을 토대로 throw 한 에러를 직접 설정하였다
@@ -6,6 +6,7 @@ import { Request, Response } from 'express';
 // 콘트롤러에서 HttpExceptionFilter 를 사용하고자 하는 컨트롤러의 Route 에서 UseFilters 라는 데코레이터를 이용하여 사용할 수 있다.
 
 // catch 데코레이터를 사용하여 HttpException 관련 에러를 catch 하겠다는 선언
+// ExceptionFilter 인터페이스를 implements 하고, catch 함수를 구현하면 된다
 // 만약 HttpException을 빼면 전체에 대한 Exception Handler 로써 catch 된다
 @Catch(HttpException)
 
