@@ -1,4 +1,5 @@
 import { Controller, Get, HttpException, HttpStatus, Param, ParseIntPipe, UseFilters } from '@nestjs/common';
+import { AuthToken } from 'src/common/decorators/common.authToken';
 import { HttpExceptionFilter } from './HttpExceptionFilter';
 
 // 내장된 HttpException 에러 사용
@@ -88,5 +89,10 @@ export class ExceptController {
   @Get('pipeClass/:id')
   exPipesClass(@Param('id', new ParseIntPipe({ errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE })) id: number) {
     return `입력 받은 Number: ${id}`;
+  }
+
+  @Get('auth/token')
+  getAuthToken(@AuthToken() token: string) {
+    return `HEADER에 입력한 토큰은 ${token} 입니다.`;
   }
 }
