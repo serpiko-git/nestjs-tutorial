@@ -1,14 +1,13 @@
 module.exports = {
+  'linebreak-style': ['error', require('os').EOL === '\r\n' ? 'windows' : 'unix'],
+  'prettier/prettier': ['error', { endOfLine: 'auto' }],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: 'tsconfig.json',
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   root: true,
   env: {
     node: true,

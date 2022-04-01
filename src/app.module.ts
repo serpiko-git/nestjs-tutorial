@@ -6,9 +6,10 @@ import { HostController } from './host/host.controller';
 import { LoggerMiddleware } from './middleware/LoggerMiddleware';
 import { UserModule } from './user/user.module';
 import { ExceptController } from './exception/except.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [UserModule],
+  imports: [UserModule, AuthModule],
   controllers: [AppController, CatsController, HostController, ExceptController],
   providers: [AppService],
 })
